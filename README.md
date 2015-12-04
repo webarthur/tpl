@@ -11,5 +11,12 @@ $('#template').html(template);
 </script>
 ```
 
+## Configurable tags
+```
+<script>
+$tpl.tags = ["{{", "}}"];
+</script>
+```
+
 ## jsFiddle
-http://jsfiddle.net/webarthur/xuyxeo1m/9/
+http://jsfiddle.net/webarthur/xuyxeo1m/11/
