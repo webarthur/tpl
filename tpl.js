@@ -10,15 +10,10 @@ $tpl = function(template, scope){
   
   return template.replace(new RegExp($tpl.tags[0]+'([^\\'+$tpl.tags[1][0]+']*)'+$tpl.tags[1], 'g'), 
     function(match, attr){
-      try{
-        with(scope)
-        	return eval(attr) || '';
-      } catch (e) {
-        return '';
-      }
-
+      try{ with(scope); return eval(attr) || ''; }
+      catch (e) { return ''; }
     });
 }
 
-if(!String.prototype.compile)
+if(!String.prototype.tpl)
   String.prototype.tpl = $tpl;
