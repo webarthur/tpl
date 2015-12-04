@@ -9,6 +9,7 @@ The most lightest template engine for JavaScript. Single, easiest to use and cli
 var template = $('#template').html().tpl(scope); // scope var is optional
 $('#template').html(template);
 </script>
+```
 
 ## jsFiddle
 http://jsfiddle.net/webarthur/xuyxeo1m/9/
