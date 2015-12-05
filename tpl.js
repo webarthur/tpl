@@ -10,7 +10,7 @@ $tpl = function(template, scope){
   
   return template.replace(new RegExp($tpl.tags[0]+'([^\\'+$tpl.tags[1][0]+']*)'+$tpl.tags[1], 'g'), 
     function(match, attr){
-      try{ with(scope); return eval(attr) || ''; }
+      try{ return eval("with(scope) "+attr) || ''; }
       catch (e) { return ''; }
     });
 }
