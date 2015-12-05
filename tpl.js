@@ -9,8 +9,8 @@ $tpl = function(template, scope){
     || (scope=window);
   
   return template.replace(new RegExp($tpl.tags[0]+'([^\\'+$tpl.tags[1][0]+']*)'+$tpl.tags[1], 'g'), 
-    function(match, attr){
-      try{ return eval("with(scope) "+attr) || ''; }
+    function(match, exp){
+      try{ return eval("with(scope) "+exp) || ''; }
       catch (e) { return ''; }
     });
 }
